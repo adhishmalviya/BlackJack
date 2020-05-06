@@ -104,7 +104,15 @@ function getCardUI(card) {
   //card.Suit
   return el;
 }
-
+function numberOfAces(player) {
+  let count = 0;
+  for (var i = 0; i < players[player].Hand.length; i++) {
+    if (players[player].Hand[i].Weight == 11) {
+      count++;
+    }
+  }
+  return count;
+}
 // returns the number of points that a player has in hand
 function getPoints(player) {
   var points = 0;
@@ -112,6 +120,12 @@ function getPoints(player) {
     points += players[player].Hand[i].Weight;
   }
   players[player].Points = points;
+  if (points > 21) {
+    let count = numberOfAces(player);
+    if (count > 0) {
+      points -= count * 11;
+    }
+  }
   return points;
 }
 
