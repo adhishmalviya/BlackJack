@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+
+<html class="no-js">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title></title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="main.css" />
+  </head>
+
+  <body>
+    <div class="game">
+      <h3>Simple BlackJack by Adhish</h3>
+      <p>
+        Each player attempts to win by getting a count as close to 21 as
+        possible, without going over 21. It is up to each individual player if
+        an ace is worth 1 or 11. Face cards are 10 and any other card is its pip
+        value.
+      </p>
+      <div class="game-body">
+        <div class="game-options">
+          <input
+            type="button"
+            id="btnStart"
+            class="btn"
+            value="New Game"
+            onclick="startblackjack()"
+          /><br />
+          <input
+            type="button"
+            class="btn"
+            value="Hit!"
+            id="hitbutton"
+            onclick="hit()"
+          />
+          <input type="button" class="btn" value="Stay!" onclick="stay()" />
+        </div>
+
+        <div class="status" id="status"></div>
+
+        <div id="deck" class="deck">
+          <div id="deckcount">52</div>
+        </div>
+
+        <div id="players" class="players"></div>
+
+        <div class="clear"></div>
+      </div>
+    </div>
+    <script src="main.js" async defer></script>
+  </body>
+</html>
