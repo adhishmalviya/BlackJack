@@ -122,7 +122,7 @@ function getPoints(player) {
   if (points > 21) {
     let count = numberOfAces(player);
     if (count > 0) {
-      points -= count * 11;
+      points -= count * 10;
     }
   }
   players[player].Points = points;
