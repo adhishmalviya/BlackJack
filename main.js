@@ -119,13 +119,14 @@ function getPoints(player) {
   for (var i = 0; i < players[player].Hand.length; i++) {
     points += players[player].Hand[i].Weight;
   }
-  players[player].Points = points;
   if (points > 21) {
     let count = numberOfAces(player);
     if (count > 0) {
       points -= count * 11;
     }
   }
+  players[player].Points = points;
+
   return points;
 }
 
